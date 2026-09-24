@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Central de Ajuda — Pijammá</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --rose:rgb(235,199,192);
+  --rose-deep:rgb(196,142,132);
+  --rose-wash:rgba(235,199,192,.16);
+  --rose-soft:rgba(235,199,192,.32);
+  --bg:#fff;--text:#4a3f3c;--strong:#2f2624;--muted:#9a8b87;
+  --line:rgba(235,199,192,.6);
+}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:300;line-height:1.8;font-size:15px}
+strong{font-weight:500;color:var(--strong)}
+
+/* marca */
+.brands{background-color: var(--rose);margin:0 auto;padding:24px;display:flex;align-items:center;justify-content:center;padding-top:calc(24px + env(safe-area-inset-top,0px))}
+.brands .logo-pijamma{height:18px;width:auto;display:block}
+footer .logo-iscode{height:13px;width:auto;display:inline-block;vertical-align:middle;margin-right:2px;opacity:.85}
+
+header.hero{background:radial-gradient(120% 140% at 50% 0%,var(--rose-soft) 0%,var(--rose-wash) 45%,#fff 100%);padding:64px 24px 56px;text-align:center;border-bottom:1px solid var(--line)}
+header.hero .in{max-width:560px;margin:0 auto}
+h1{font-size:clamp(24px,5vw,32px);line-height:1.3;margin:0 0 14px;font-weight:300;letter-spacing:-.01em;color:var(--strong)}
+header.hero p{margin:0 auto;max-width:46ch;color:var(--text)}
+
+main.wrap{max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+h2.section-title{font-size:12px;margin:0 0 20px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-deep);display:flex;align-items:center;gap:14px}
+h2.section-title::after{content:"";flex:1;height:1px;background:var(--line)}
+p{margin:0 0 14px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84em;background:var(--rose-wash);border:1px solid var(--line);padding:1px 8px;border-radius:20px;color:var(--strong);word-break:break-word}
+
+/* accordion */
+.accordion{border-top:1px solid var(--line)}
+.item{border-bottom:1px solid var(--line)}
+.item button.toggle{all:unset;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:20px 4px;cursor:pointer}
+.item button.toggle:focus-visible{outline:2px solid var(--rose-deep);outline-offset:4px;border-radius:6px}
+.item .qtitle{font-size:16px;font-weight:400;color:var(--strong);text-align:left}
+.item .qmeta{font-size:11px;color:var(--muted);letter-spacing:.06em;margin-top:4px}
+.item .chev{line-height:1px;flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rose);display:grid;place-items:center;color:var(--rose-deep);transition:transform .25s ease}
+.item[aria-expanded="true"] .chev{transform:rotate(45deg)}
+.item .panel{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.item .panel-in{padding:0 4px 28px}
+
+.scroll{overflow-x:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:18px 0}
+table{border-collapse:collapse;width:100%;min-width:480px}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+th{color:var(--muted);font-weight:400;font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+tr:last-child td{border-bottom:0}
+.card{background:var(--rose-wash);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:16px 0}
+.example{background:var(--rose-wash);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:18px 0;line-height:2}
+.example strong{display:block;margin-bottom:4px;font-size:12px;letter-spacing:.1em;color:var(--rose-deep);font-weight:500}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+ol.steps li{counter-increment:s;position:relative;padding:14px 0 14px 48px;border-bottom:1px solid var(--line)}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:14px;width:28px;height:28px;border-radius:50%;border:1px solid var(--rose);background:#fff;color:var(--rose-deep);font-weight:400;font-size:12px;display:grid;place-items:center;line-height:1}
+ul.flow{list-style:none;padding:0;margin:0}
+ul.flow li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+ul.flow li:last-child{border-bottom:0}
+ul.flow .n{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--rose);color:var(--rose-deep);font-size:11px;display:grid;place-items:center;margin-top:2px}
+
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.micro{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;color:var(--muted);letter-spacing:.03em;text-transform:none}
+.micro a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.micro a:hover,.micro a:focus-visible{color:var(--rose-deep);border-color:var(--rose-deep)}
+.micro .dot{opacity:.6}
+.micro .wa{display:inline-flex;align-items:center;gap:5px}
+.micro .wa svg{width:12px;height:12px;fill:currentColor}
+
+@media (prefers-reduced-motion: reduce){
+  .item .chev, .item .panel{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="brands">
+  <img class="logo-pijamma" src="/pijamma-png-17113620.png" alt="Pijammá">
+</div>
+
+<header class="hero" id="inicio">
+  <div class="in">
+    <h1>Guias do painel Pijammá</h1>
+    <p>Passo a passo de tudo que envolve o cadastro e a configuração da loja. Clique em um título abaixo para abrir o conteúdo.</p>
+  </div>
+</header>
+
+<main class="wrap" id="guias">
+  <h2 class="section-title">Guias disponíveis</h2>
+
+  <div class="accordion" id="accordion">
+
+    <div class="item" aria-expanded="false">
+      <button class="toggle" aria-controls="p1">
+        <span>
+          <span class="qtitle">Como cadastrar banners de categoria</span>
+          <span class="qmeta">Banners · Tags · Home</span>
+        </span>
+        <span class="chev">+</span>
+      </button>
+      <div class="panel" id="p1">
+        <div class="panel-in">
+
+          <h2 class="section-title" style="margin-top:0">Regra do nome</h2>
+          <p>Cada categoria tem uma tag. Para o banner aparecer no topo da página dela, o nome da <strong>posição</strong> do banner (em <strong>Banners</strong> no painel) precisa ser exatamente o nome da tag mais o final abaixo:</p>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Dispositivo</th><th>Posição do banner</th></tr></thead>
+              <tbody>
+                <tr><td>Desktop</td><td><code>nome-da-tag-banner-principal</code></td></tr>
+                <tr><td>Mobile</td><td><code>nome-da-tag-banner-principal-mobile</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="example">
+            <strong>Exemplo: categoria Loungewear</strong>
+            Tag: <code>home-slider-loungewear</code><br>
+            Desktop: <code>home-slider-loungewear-banner-principal</code><br>
+            Mobile: <code>home-slider-loungewear-banner-principal-mobile</code>
+          </div>
+
+          <h2 class="section-title">Quando não há banner cadastrado</h2>
+          <ul class="flow">
+            <li><span class="n">1</span><span><strong>Desktop:</strong> se não houver banner na posição, aparece a imagem cadastrada na própria tag.</span></li>
+            <li><span class="n">2</span><span><strong>Mobile:</strong> se não houver banner mobile, aparece a imagem do desktop.</span></li>
+            <li><span class="n">3</span><span><strong>Sem nenhuma imagem:</strong> a página abre normalmente, sem banner no topo.</span></li>
+          </ul>
+
+          <h2 class="section-title">Mesma tag na categoria e no slider da home</h2>
+          <p>A tag criada para a categoria também pode alimentar o slider da home. Cadastrando um banner para ela, o slide aparece na home junto com os produtos da categoria.</p>
+          <div class="card">
+            <strong>Atenção</strong>
+            Os produtos precisam ter a <em>mesma tag</em> cadastrada. É isso que faz o banner da categoria e o slide da home funcionarem juntos.
+          </div>
+
+          <h2 class="section-title">Passo a passo</h2>
+          <ol class="steps">
+            <li>Crie a tag da categoria (ex.: <code>home-slider-loungewear</code>) e anote o nome dela.</li>
+            <li>Cadastre essa mesma tag em todos os produtos da categoria.</li>
+            <li>Em <strong>Banners</strong>, crie o banner desktop com a posição <code>nome-da-tag-banner-principal</code>.</li>
+            <li>Crie o banner mobile com a posição <code>nome-da-tag-banner-principal-mobile</code> (opcional, sem ele vale o desktop).</li>
+            <li>Para o slider da home, cadastre também o banner do slide para a mesma tag.</li>
+            <li>Abra a página da categoria no computador e no celular para conferir.</li>
+          </ol>
+
+          <h2 class="section-title">Se algo não aparecer</h2>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>O que acontece</th><th>O que conferir</th></tr></thead>
+              <tbody>
+                <tr><td>O banner não aparece</td><td>O nome da posição precisa ser igual ao da tag, sem espaços e sem letras maiúsculas.</td></tr>
+                <tr><td>Aparece a imagem da tag, não o banner</td><td>Não há banner cadastrado na posição, então a imagem da tag foi usada.</td></tr>
+                <tr><td>No celular aparece a imagem do desktop</td><td>Não há banner na posição de mobile (<code>-banner-principal-mobile</code>).</td></tr>
+                <tr><td>Slide da home sem produtos</td><td>Confira se os produtos têm a mesma tag cadastrada.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- novos guias entram aqui como novos .item -->
+
+  </div>
+</main>
+
+<footer>
+  <img class="logo-iscode" src="data:image/png;base64,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" alt="is.code"> · desenvolvido para Pijammá
+  <div class="micro">
+    <a href="https://iscode.com.br" target="_blank" rel="noopener">iscode.com.br</a>
+    <span class="dot">·</span>
+    <a class="wa" href="https://wa.me/5515996823970" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2Zm5.6 14.3c-.24.66-1.38 1.28-1.9 1.34-.5.06-1.02.28-3.42-.72-2.87-1.2-4.72-4.1-4.86-4.3-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.1 1-2.4.26-.28.58-.36.78-.36.2 0 .4 0 .56.02.18.02.42-.06.66.5.24.58.82 2 .9 2.14.08.14.14.32.02.52-.12.2-.18.32-.36.5-.18.2-.38.44-.54.6-.18.18-.36.36-.16.7.2.36.88 1.46 1.9 2.36 1.3 1.16 2.4 1.52 2.76 1.7.36.16.56.14.78-.08.22-.22.92-1.06 1.16-1.42.24-.36.48-.3.8-.18.32.12 2.04.96 2.4 1.14.36.18.6.26.68.42.1.16.1.9-.14 1.56Z"/></svg>
+      (15) 99682-3970
+    </a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.item').forEach(function(item){
+  var btn = item.querySelector('.toggle');
+  var panel = item.querySelector('.panel');
+  btn.addEventListener('click', function(){
+    var open = item.getAttribute('aria-expanded') === 'true';
+    // fecha os outros
+    document.querySelectorAll('.item').forEach(function(other){
+      if(other !== item){
+        other.setAttribute('aria-expanded','false');
+        other.querySelector('.panel').style.maxHeight = null;
+      }
+    });
+    if(open){
+      item.setAttribute('aria-expanded','false');
+      panel.style.maxHeight = null;
+    } else {
+      item.setAttribute('aria-expanded','true');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
