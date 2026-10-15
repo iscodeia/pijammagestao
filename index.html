@@ -170,7 +170,86 @@ footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:v
         </div>
       </div>
     </div>
+        <div class="item" aria-expanded="false">
+      <button class="toggle" aria-controls="p2">
+        <span>
+          <span class="qtitle">Como cadastrar banners no meio da listagem</span>
+          <span class="qmeta">Banners · Categoria · Meio dos produtos</span>
+        </span>
+        <span class="chev">+</span>
+      </button>
+      <div class="panel" id="p2">
+        <div class="panel-in">
 
+          <h2 class="section-title" style="margin-top:0">Como funciona</h2>
+          <p>Dentro da página de categoria, entre os produtos, podem aparecer banners. Existem dois tamanhos: <strong>grande</strong> e <strong>pequeno</strong>. Cada um tem sua própria posição em <strong>Banners</strong> no painel, e o nome precisa ser exatamente o da tag mais o final abaixo:</p>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Tamanho</th><th>Dispositivo</th><th>Posição do banner</th></tr></thead>
+              <tbody>
+                <tr><td>Grande</td><td>Desktop</td><td><code>nome-da-tag-banner-meio</code></td></tr>
+                <tr><td>Grande</td><td>Mobile</td><td><code>nome-da-tag-banner-meio-mobile</code></td></tr>
+                <tr><td>Pequeno</td><td>Desktop</td><td><code>nome-da-tag-banner-meio-pequeno</code></td></tr>
+                <tr><td>Pequeno</td><td>Mobile</td><td><code>nome-da-tag-banner-meio-pequeno-mobile</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="example">
+            <strong>Exemplo: categoria Loungewear</strong>
+            Tag: <code>home-slider-loungewear</code><br>
+            Grande desktop: <code>home-slider-loungewear-banner-meio</code><br>
+            Grande mobile: <code>home-slider-loungewear-banner-meio-mobile</code><br>
+            Pequeno desktop: <code>home-slider-loungewear-banner-meio-pequeno</code><br>
+            Pequeno mobile: <code>home-slider-loungewear-banner-meio-pequeno-mobile</code>
+          </div>
+
+          <h2 class="section-title">Onde cada banner aparece</h2>
+          <p>O banner entra logo <strong>depois</strong> do produto indicado na tabela. A contagem é feita dentro de cada página de produtos.</p>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Tamanho</th><th>Desktop</th><th>Mobile</th></tr></thead>
+              <tbody>
+                <tr><td>Grande</td><td>Depois do 7º e do 14º produto</td><td>Depois do 6º e do 16º produto</td></tr>
+                <tr><td>Pequeno</td><td>Depois do 3º, 12º e 19º produto</td><td>Depois do 3º e do 11º produto</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="section-title">Mais de um banner na mesma posição</h2>
+          <p>Para preencher mais de um espaço, cadastre vários banners na <strong>mesma posição</strong>. Eles são usados na ordem em que aparecem no painel: o 1º banner vai para o 1º espaço, o 2º banner para o 2º espaço, e assim por diante.</p>
+          <div class="card">
+            <strong>Atenção</strong>
+            Os banners se repetem em cada página da listagem. Quem clicar em "carregar mais" vai ver os mesmos banners nos mesmos pontos.
+          </div>
+
+          <h2 class="section-title">Passo a passo</h2>
+          <ol class="steps">
+            <li>Anote o nome da tag da categoria (ex.: <code>home-slider-loungewear</code>).</li>
+            <li>Em <strong>Banners</strong>, crie o banner grande desktop com a posição <code>nome-da-tag-banner-meio</code>.</li>
+            <li>Crie o banner grande mobile com a posição <code>nome-da-tag-banner-meio-mobile</code>.</li>
+            <li>Para os banners menores, use <code>nome-da-tag-banner-meio-pequeno</code> (desktop) e <code>nome-da-tag-banner-meio-pequeno-mobile</code> (mobile).</li>
+            <li>Se quiser mais de um banner do mesmo tipo, cadastre outro na mesma posição e confira a ordem.</li>
+            <li>Abra a categoria no computador e no celular e role até os pontos indicados para conferir.</li>
+          </ol>
+
+          <h2 class="section-title">Se algo não aparecer</h2>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>O que acontece</th><th>O que conferir</th></tr></thead>
+              <tbody>
+                <tr><td>O banner não aparece</td><td>O nome da posição precisa ser igual ao da tag, sem espaços e sem letras maiúsculas.</td></tr>
+                <tr><td>Banner no celular não aparece</td><td>Confira se a posição termina em <code>-mobile</code>. O mobile não usa o banner do desktop aqui.</td></tr>
+                <tr><td>O banner está na ordem errada</td><td>A ordem segue a lista de banners da posição no painel.</td></tr>
+                <tr><td>Não aparece o 2º ou o 3º banner</td><td>Confira se há banners suficientes cadastrados na posição (veja os pontos na tabela acima).</td></tr>
+                <tr><td>Categoria com poucos produtos</td><td>O banner só aparece se a página tiver produtos até aquele ponto.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
     <!-- novos guias entram aqui como novos .item -->
 
   </div>
